@@ -1,8 +1,8 @@
 ##Generate files
-./bin/generate <number_of_accounts> (i.e.: ./bin/generate 20000)
+./bin/generate number_of_accounts (i.e.: ./bin/generate 20000)
 
 ##Running
-./bin/exercicio accounts.csv transactions.csv
+./bin/exercicio path/to/accounts.csv path/to/transactions.csv
 
 ##Testing
 ./bin/rspec --format doc
