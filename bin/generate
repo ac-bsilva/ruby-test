@@ -1,0 +1,22 @@
+#!/usr/bin/env ruby
+
+def generate_transactions_file(size)
+
+  File.open("accounts.csv","wb") do |file|
+    Range.new(1,size).each do |i|
+      file.write "#{i},#{rand(0..1) == 1 ? "-": ""}#{rand(1..10000)}\n"
+    end
+  end
+  puts("Accounts file created: accounts.csv" )
+
+  File.open("transactions.csv","wb") do |file|
+    Range.new(1,size).each do |i|
+      file.write "#{rand(Range.new(1,size))},#{rand(0..1) == 1 ? "-": ""}#{rand(1..10000)}\n"
+    end
+  end
+  puts("Transactions file created: transactions.csv" )
+
+end
+
+abort("Usage ./generate <num_of_accounts>") if ARGV[0].nil?
+generate_transactions_file ARGV[0].to_i

@@ -1,0 +1,6 @@
+#!/usr/bin/env ruby
+require_relative "../lib/user_balance_service.rb"
+
+abort "Usage './bin/execicio path/to/accounts_file.cs path/to/transactions_file.csv'" unless ARGV.count == 2
+
+UsersBalanceReport::generate( File.join(Dir.pwd, ARGV[0]), File.join(Dir.pwd, ARGV[1]) )
